@@ -30,6 +30,7 @@ class SkeletonApp extends StatelessWidget {
         title: 'Flutter Demo',
         navigatorKey: globalNavKey,
         theme: lightTheme,
+        darkTheme: darkTheme,
         home: const HomeScreen(initialPage: 0),
       ),
     );
