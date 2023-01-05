@@ -37,26 +37,26 @@ dependencies:
   intl: ^0.17.0
 
   ### State Management
-  flutter_bloc: ^8.0.1
+  flutter_bloc: ^8.1.1
 
   ### Networking
   dio: ^4.0.6
-  retrofit: ^3.0.1+1
+  retrofit: ^3.3.1
 
   ### Data
-  drift: ^1.6.0
-  sqlite3_flutter_libs: ^0.5.7
+  drift: ^2.4.2
+  sqlite3_flutter_libs: ^0.5.12
 
   ## Path Util
-  path: ^1.8.1
+  path: ^1.8.2
   path_provider: ^2.0.11
 
   ## UI
   bottom_nav_layout: ^3.0.9 # https://pub.dev/packages/bottom_nav_layout
 
   ### Code Generation
-  freezed_annotation: ^2.0.3 # https://pub.dev/packages/freezed_annotation
-  json_annotation: ^4.6.0 # https://pub.dev/packages/json_annotation
+  freezed_annotation: ^2.2.0 # https://pub.dev/packages/freezed_annotation
+  json_annotation: ^4.7.0 # https://pub.dev/packages/json_annotation
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -67,21 +67,24 @@ dev_dependencies:
     sdk: flutter
 
   # Run "flutter packages pub run build_runner watch --delete-conflicting-outputs" for code generation when changing the database or annotating classes with @freezed or @JsonSerializable()
-  build_runner: ^2.1.11
-  retrofit_generator: ^4.0.1
-  drift_dev: ^1.6.0 # https://pub.dev/packages/drift_dev
-  json_serializable: ^6.3.0 # https://pub.dev/packages/json_serializable
-  freezed: 2.0.3+1 # https://pub.dev/packages/freezed
+  build_runner: ^2.3.3
+  retrofit_generator: ^4.2.0
+  drift_dev: ^2.4.1 # https://pub.dev/packages/drift_dev
+  json_serializable: ^6.5.4 # https://pub.dev/packages/json_serializable
+  freezed: ^2.3.2 # https://pub.dev/packages/freezed
 
-  # The "flutter_lints" package below contains a set of recommended lints to
+  # The "very_good_analysis" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  lint: ^1.8.2
+  very_good_analysis: ^3.1.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+  flutter_launcher_icons: ^0.11.0
+  flutter_native_splash: ^2.2.16
+
+  # For information on the generic Dart part of this file, see the
+  # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:

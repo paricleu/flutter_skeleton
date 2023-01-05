@@ -8,14 +8,14 @@ class CatCubit extends Cubit<CatState> {
 
   CatCubit(this.repo) : super(const CatState.loading());
 
-  Future loadCats() async {
+  Future<void> loadCats() async {
     final result = await repo.getCatList(20, 1);
     result.when(
       success: (data) {
         emit(CatState.loaded(data));
       },
       failure: (error) {
-        debugPrint("Emit error state and show user facing error");
+        debugPrint('Emit error state and show user facing error');
       },
     );
   }

@@ -11,8 +11,8 @@ class CatsRequest {
 
   CatsRequest({
     this.limit,
-    this.order = "RANDOM",
-    this.size = "small",
+    this.order = 'RANDOM',
+    this.size = 'small',
     this.page,
   });
 

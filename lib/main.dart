@@ -7,13 +7,11 @@ import 'package:flutter_skeleton/src/data/remote/remote_repository.dart';
 import 'package:flutter_skeleton/src/util/skeleton_bloc_observer.dart';
 
 void main() {
-  const String apiKey = "3745a7eb-b0d4-4688-9015-91cea9476518";
+  const apiKey = '3745a7eb-b0d4-4688-9015-91cea9476518';
 
   final localRepo = LocalRepository(SkeletonDatabase());
-  final remoteRepo = RemoteRepository(apiKey: apiKey, isDev: false);
+  final remoteRepo = RemoteRepository(apiKey: apiKey);
 
-  BlocOverrides.runZoned(
-    () => runApp(SkeletonApp(localRepo: localRepo, remoteRepo: remoteRepo)),
-    blocObserver: SkeletonBlocObserver(),
-  );
+  runApp(SkeletonApp(localRepo: localRepo, remoteRepo: remoteRepo));
+  Bloc.observer = SkeletonBlocObserver();
 }

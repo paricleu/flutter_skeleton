@@ -13,10 +13,10 @@ class SkeletonApp extends StatelessWidget {
   final RemoteRepository remoteRepo;
 
   const SkeletonApp({
-    Key? key,
+    super.key,
     required this.localRepo,
     required this.remoteRepo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,7 @@ class SkeletonApp extends StatelessWidget {
         title: 'Flutter Demo',
         navigatorKey: globalNavKey,
         theme: lightTheme,
+        darkTheme: darkTheme,
         home: const HomeScreen(initialPage: 0),
       ),
     );

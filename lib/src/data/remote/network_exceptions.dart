@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'network_exceptions.freezed.dart';
@@ -65,7 +66,8 @@ class NetworkException with _$NetworkException {
     }
   }
 
-  factory NetworkException.fromError(Object error) {
+  factory NetworkException.fromError(Object error, [StackTrace? stackTrace]) {
+    debugPrintStack(stackTrace: stackTrace);
     if (error is Exception) {
       try {
         var networkExceptions = const NetworkException.unexpectedError();

@@ -4,12 +4,12 @@ import 'package:flutter_skeleton/src/feature/cat/cubit/cat_cubit.dart';
 import 'package:flutter_skeleton/src/feature/cat/cubit/cat_state.dart';
 
 class CatScreen extends StatelessWidget {
-  const CatScreen({Key? key}) : super(key: key);
+  const CatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Katzen")),
+      appBar: AppBar(title: const Text('Katzen')),
       body: BlocBuilder<CatCubit, CatState>(
         builder: (context, state) {
           return state.maybeWhen(
@@ -24,7 +24,7 @@ class CatScreen extends StatelessWidget {
                     final cat = cats[index];
 
                     return ListTile(
-                      title: Text("Id: ${cat.id})"),
+                      title: Text('Id: ${cat.id})'),
                       trailing: Image.network(cat.imageUrl),
                     );
                   },
@@ -33,7 +33,6 @@ class CatScreen extends StatelessWidget {
             },
             orElse: () => const Center(child: CircularProgressIndicator()),
           );
-          return Container();
         },
       ),
     );

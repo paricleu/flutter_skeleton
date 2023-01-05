@@ -15,7 +15,7 @@ class RemoteRepository {
 
   RemoteRepository({required this.apiKey, bool isDev = false}) {
     _dio.options.baseUrl = isDev ? testApiUrl : liveApiUrl;
-    _dio.options.headers["x-api-key"] = apiKey;
+    _dio.options.headers['x-api-key'] = apiKey;
 
     if (isDev) {
       // Example for basic auth
@@ -27,9 +27,8 @@ class RemoteRepository {
           responseBody: true,
         ),
       );
-
-      _restClient = RestClient(_dio, baseUrl: isDev ? testApiUrl : liveApiUrl);
     }
+    _restClient = RestClient(_dio, baseUrl: isDev ? testApiUrl : liveApiUrl);
   }
 
   void addSessionHeader(String sessionToken) {
@@ -44,13 +43,13 @@ class RemoteRepository {
     int? limit,
     int? page,
   ]) async {
-    final CatsRequest request = CatsRequest(limit: limit, page: page);
+    final request = CatsRequest(limit: limit, page: page);
     try {
       final response = await _restClient.getCats(request);
 
       return ApiResult.success(response);
-    } catch (e) {
-      return ApiResult.failure(error: NetworkException.fromError(e));
+    } catch (e, s) {
+      return ApiResult.failure(error: NetworkException.fromError(e, s));
     }
   }
 }

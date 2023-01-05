@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'api_result.dart';
 
@@ -24,8 +24,8 @@ mixin _$ApiResult<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(NetworkException error)? failure,
+    TResult? Function(T data)? success,
+    TResult? Function(NetworkException error)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$ApiResult<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Success<T> value)? success,
-    TResult Function(Failure<T> value)? failure,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Failure<T> value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,16 +60,18 @@ mixin _$ApiResult<T> {
 abstract class $ApiResultCopyWith<T, $Res> {
   factory $ApiResultCopyWith(
           ApiResult<T> value, $Res Function(ApiResult<T>) then) =
-      _$ApiResultCopyWithImpl<T, $Res>;
+      _$ApiResultCopyWithImpl<T, $Res, ApiResult<T>>;
 }
 
 /// @nodoc
-class _$ApiResultCopyWithImpl<T, $Res> implements $ApiResultCopyWith<T, $Res> {
+class _$ApiResultCopyWithImpl<T, $Res, $Val extends ApiResult<T>>
+    implements $ApiResultCopyWith<T, $Res> {
   _$ApiResultCopyWithImpl(this._value, this._then);
 
-  final ApiResult<T> _value;
   // ignore: unused_field
-  final $Res Function(ApiResult<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -77,25 +79,25 @@ abstract class _$$SuccessCopyWith<T, $Res> {
   factory _$$SuccessCopyWith(
           _$Success<T> value, $Res Function(_$Success<T>) then) =
       __$$SuccessCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$SuccessCopyWithImpl<T, $Res> extends _$ApiResultCopyWithImpl<T, $Res>
+class __$$SuccessCopyWithImpl<T, $Res>
+    extends _$ApiResultCopyWithImpl<T, $Res, _$Success<T>>
     implements _$$SuccessCopyWith<T, $Res> {
   __$$SuccessCopyWithImpl(
       _$Success<T> _value, $Res Function(_$Success<T>) _then)
-      : super(_value, (v) => _then(v as _$Success<T>));
+      : super(_value, _then);
 
-  @override
-  _$Success<T> get _value => super._value as _$Success<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
     return _then(_$Success<T>(
-      data == freezed
+      freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T,
@@ -138,6 +140,7 @@ class _$Success<T> with DiagnosticableTreeMixin implements Success<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SuccessCopyWith<T, _$Success<T>> get copyWith =>
       __$$SuccessCopyWithImpl<T, _$Success<T>>(this, _$identity);
 
@@ -153,8 +156,8 @@ class _$Success<T> with DiagnosticableTreeMixin implements Success<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(NetworkException error)? failure,
+    TResult? Function(T data)? success,
+    TResult? Function(NetworkException error)? failure,
   }) {
     return success?.call(data);
   }
@@ -184,8 +187,8 @@ class _$Success<T> with DiagnosticableTreeMixin implements Success<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Success<T> value)? success,
-    TResult Function(Failure<T> value)? failure,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Failure<T> value)? failure,
   }) {
     return success?.call(this);
   }
@@ -207,7 +210,7 @@ class _$Success<T> with DiagnosticableTreeMixin implements Success<T> {
 abstract class Success<T> implements ApiResult<T> {
   const factory Success(final T data) = _$Success<T>;
 
-  T get data => throw _privateConstructorUsedError;
+  T get data;
   @JsonKey(ignore: true)
   _$$SuccessCopyWith<T, _$Success<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -218,27 +221,27 @@ abstract class _$$FailureCopyWith<T, $Res> {
   factory _$$FailureCopyWith(
           _$Failure<T> value, $Res Function(_$Failure<T>) then) =
       __$$FailureCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({NetworkException error});
 
   $NetworkExceptionCopyWith<$Res> get error;
 }
 
 /// @nodoc
-class __$$FailureCopyWithImpl<T, $Res> extends _$ApiResultCopyWithImpl<T, $Res>
+class __$$FailureCopyWithImpl<T, $Res>
+    extends _$ApiResultCopyWithImpl<T, $Res, _$Failure<T>>
     implements _$$FailureCopyWith<T, $Res> {
   __$$FailureCopyWithImpl(
       _$Failure<T> _value, $Res Function(_$Failure<T>) _then)
-      : super(_value, (v) => _then(v as _$Failure<T>));
+      : super(_value, _then);
 
-  @override
-  _$Failure<T> get _value => super._value as _$Failure<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
     return _then(_$Failure<T>(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as NetworkException,
@@ -246,6 +249,7 @@ class __$$FailureCopyWithImpl<T, $Res> extends _$ApiResultCopyWithImpl<T, $Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NetworkExceptionCopyWith<$Res> get error {
     return $NetworkExceptionCopyWith<$Res>(_value.error, (value) {
       return _then(_value.copyWith(error: value));
@@ -280,15 +284,15 @@ class _$Failure<T> with DiagnosticableTreeMixin implements Failure<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Failure<T> &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$FailureCopyWith<T, _$Failure<T>> get copyWith =>
       __$$FailureCopyWithImpl<T, _$Failure<T>>(this, _$identity);
 
@@ -304,8 +308,8 @@ class _$Failure<T> with DiagnosticableTreeMixin implements Failure<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(NetworkException error)? failure,
+    TResult? Function(T data)? success,
+    TResult? Function(NetworkException error)? failure,
   }) {
     return failure?.call(error);
   }
@@ -335,8 +339,8 @@ class _$Failure<T> with DiagnosticableTreeMixin implements Failure<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Success<T> value)? success,
-    TResult Function(Failure<T> value)? failure,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Failure<T> value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -358,7 +362,7 @@ class _$Failure<T> with DiagnosticableTreeMixin implements Failure<T> {
 abstract class Failure<T> implements ApiResult<T> {
   const factory Failure({final NetworkException error}) = _$Failure<T>;
 
-  NetworkException get error => throw _privateConstructorUsedError;
+  NetworkException get error;
   @JsonKey(ignore: true)
   _$$FailureCopyWith<T, _$Failure<T>> get copyWith =>
       throw _privateConstructorUsedError;
