@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'cat_state.dart';
 
@@ -25,9 +25,9 @@ mixin _$CatState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<CatModel> cats)? loaded,
-    TResult Function()? error,
+    TResult? Function()? loading,
+    TResult? Function(List<CatModel> cats)? loaded,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$CatState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(Loaded value)? loaded,
-    TResult Function(Error value)? error,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,16 +65,18 @@ mixin _$CatState {
 /// @nodoc
 abstract class $CatStateCopyWith<$Res> {
   factory $CatStateCopyWith(CatState value, $Res Function(CatState) then) =
-      _$CatStateCopyWithImpl<$Res>;
+      _$CatStateCopyWithImpl<$Res, CatState>;
 }
 
 /// @nodoc
-class _$CatStateCopyWithImpl<$Res> implements $CatStateCopyWith<$Res> {
+class _$CatStateCopyWithImpl<$Res, $Val extends CatState>
+    implements $CatStateCopyWith<$Res> {
   _$CatStateCopyWithImpl(this._value, this._then);
 
-  final CatState _value;
   // ignore: unused_field
-  final $Res Function(CatState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -84,13 +86,11 @@ abstract class _$$LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadingCopyWithImpl<$Res> extends _$CatStateCopyWithImpl<$Res>
+class __$$LoadingCopyWithImpl<$Res>
+    extends _$CatStateCopyWithImpl<$Res, _$Loading>
     implements _$$LoadingCopyWith<$Res> {
   __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
-      : super(_value, (v) => _then(v as _$Loading));
-
-  @override
-  _$Loading get _value => super._value as _$Loading;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -125,9 +125,9 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<CatModel> cats)? loaded,
-    TResult Function()? error,
+    TResult? Function()? loading,
+    TResult? Function(List<CatModel> cats)? loaded,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -159,9 +159,9 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(Loaded value)? loaded,
-    TResult Function(Error value)? error,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -189,24 +189,24 @@ abstract class Loading implements CatState {
 abstract class _$$LoadedCopyWith<$Res> {
   factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
       __$$LoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<CatModel> cats});
 }
 
 /// @nodoc
-class __$$LoadedCopyWithImpl<$Res> extends _$CatStateCopyWithImpl<$Res>
+class __$$LoadedCopyWithImpl<$Res>
+    extends _$CatStateCopyWithImpl<$Res, _$Loaded>
     implements _$$LoadedCopyWith<$Res> {
   __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
-      : super(_value, (v) => _then(v as _$Loaded));
+      : super(_value, _then);
 
-  @override
-  _$Loaded get _value => super._value as _$Loaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cats = freezed,
+    Object? cats = null,
   }) {
     return _then(_$Loaded(
-      cats == freezed
+      null == cats
           ? _value._cats
           : cats // ignore: cast_nullable_to_non_nullable
               as List<CatModel>,
@@ -222,6 +222,7 @@ class _$Loaded implements Loaded {
   final List<CatModel> _cats;
   @override
   List<CatModel> get cats {
+    if (_cats is EqualUnmodifiableListView) return _cats;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_cats);
   }
@@ -245,6 +246,7 @@ class _$Loaded implements Loaded {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       __$$LoadedCopyWithImpl<_$Loaded>(this, _$identity);
 
@@ -261,9 +263,9 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<CatModel> cats)? loaded,
-    TResult Function()? error,
+    TResult? Function()? loading,
+    TResult? Function(List<CatModel> cats)? loaded,
+    TResult? Function()? error,
   }) {
     return loaded?.call(cats);
   }
@@ -295,9 +297,9 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(Loaded value)? loaded,
-    TResult Function(Error value)? error,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -320,7 +322,7 @@ class _$Loaded implements Loaded {
 abstract class Loaded implements CatState {
   const factory Loaded(final List<CatModel> cats) = _$Loaded;
 
-  List<CatModel> get cats => throw _privateConstructorUsedError;
+  List<CatModel> get cats;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -333,13 +335,10 @@ abstract class _$$ErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<$Res> extends _$CatStateCopyWithImpl<$Res>
+class __$$ErrorCopyWithImpl<$Res> extends _$CatStateCopyWithImpl<$Res, _$Error>
     implements _$$ErrorCopyWith<$Res> {
   __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
-      : super(_value, (v) => _then(v as _$Error));
-
-  @override
-  _$Error get _value => super._value as _$Error;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -374,9 +373,9 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<CatModel> cats)? loaded,
-    TResult Function()? error,
+    TResult? Function()? loading,
+    TResult? Function(List<CatModel> cats)? loaded,
+    TResult? Function()? error,
   }) {
     return error?.call();
   }
@@ -408,9 +407,9 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(Loaded value)? loaded,
-    TResult Function(Error value)? error,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
   }) {
     return error?.call(this);
   }

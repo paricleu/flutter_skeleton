@@ -2,10 +2,7 @@
 
 part of 'example_dao.dart';
 
-// **************************************************************************
-// DaoGenerator
-// **************************************************************************
-
+// ignore_for_file: type=lint
 mixin _$ExampleDaoMixin on DatabaseAccessor<SkeletonDatabase> {
   $ExampleTable get example => attachedDatabase.example;
 }

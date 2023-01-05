@@ -8,7 +8,7 @@ import 'package:flutter_skeleton/src/feature/cat/cubit/cat_cubit.dart';
 class HomeScreen extends StatelessWidget {
   final int initialPage;
 
-  const HomeScreen({Key? key, required this.initialPage}) : super(key: key);
+  const HomeScreen({super.key, required this.initialPage});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   switch (routeSettings.name) {
                     case '/':
                     default:
-                      return Container(color: Colors.lightBlueAccent);
+                      return const ColoredBox(color: Colors.lightBlueAccent);
                   }
                 },
               ),
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                   switch (routeSettings.name) {
                     case '/':
                     default:
-                      return Container(color: Colors.yellowAccent);
+                      return const ColoredBox(color: Colors.yellowAccent);
                   }
                 },
               ),
